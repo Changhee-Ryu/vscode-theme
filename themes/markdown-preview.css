@@ -1,0 +1,86 @@
+/* Custom Markdown Preview Styles for Eye-Friendly Paper Themes */
+/* Adapts perfectly to Dark Green, Dark Sepia, and Light mode automatically via theme CSS variables */
+
+body {
+    /* Soften the typography slightly */
+    line-height: 1.6;
+}
+
+/* Headings: Match the Obsidian sample by coloring all headings with our theme's blue/cyan */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--vscode-terminal-ansiBlue, #2C647D);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Add a subtle underline for the top two heading levels */
+h1,
+h2 {
+    border-bottom: 1px solid var(--vscode-panel-border);
+    padding-bottom: 0.3em;
+}
+
+/* Bold text: Warm color mapped from ansiYellow or modified resources */
+strong {
+    color: var(--vscode-gitDecoration-modifiedResourceForeground, #A15124);
+}
+
+/* Blockquotes: Use our specialized blockquote colors we defined in the theme */
+blockquote {
+    border-left: 4px solid var(--vscode-terminal-ansiBlue, #2C647D);
+    background: var(--vscode-textBlockQuote-background, rgba(0, 0, 0, 0.05));
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    color: var(--vscode-editor-foreground);
+    opacity: 0.95;
+}
+
+/* Tables: Distinctive headers and alternating row colors mapped to our list backgrounds */
+table th {
+    background-color: var(--vscode-list-hoverBackground);
+    color: var(--vscode-terminal-ansiBlue);
+    font-weight: 600;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--vscode-terminal-ansiBlue);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--vscode-editor-inactiveSelectionBackground);
+}
+
+table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+/* Inline Code: Colored text with a soft matching background */
+code {
+    color: var(--vscode-terminal-ansiMagenta, #7146B8);
+    background-color: var(--vscode-editor-inactiveSelectionBackground);
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+/* Block code (multi-line) */
+pre {
+    background-color: var(--vscode-textCodeBlock-background);
+    border: 1px solid var(--vscode-panel-border);
+    border-radius: 6px;
+    padding: 16px;
+    overflow: auto;
+}
+
+/* Do not apply inline styles to block code */
+pre code {
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}

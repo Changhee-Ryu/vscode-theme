@@ -1,0 +1,40 @@
+{
+  "name": "eye-friendly-paper",
+  "displayName": "Eye-Friendly Paper Themes",
+  "description": "A collection of comfortable, paper-inspired themes for optimal eye comfort and readability.",
+  "version": "1.0.0",
+  "icon": "icon.png",
+  "publisher": "Changhee-Ryu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Changhee-Ryu/vscode-theme.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Eye-Friendly Paper Light",
+        "uiTheme": "vs",
+        "path": "./themes/paper-light-color-theme.json"
+      },
+      {
+        "label": "Eye-Friendly Paper Dark Green",
+        "uiTheme": "vs-dark",
+        "path": "./themes/paper-dark-green-color-theme.json"
+      },
+      {
+        "label": "Eye-Friendly Paper Dark Sepia",
+        "uiTheme": "vs-dark",
+        "path": "./themes/paper-dark-sepia-color-theme.json"
+      }
+    ],
+    "markdown.previewStyles": [
+      "./themes/markdown-preview.css"
+    ]
+  }
+}
