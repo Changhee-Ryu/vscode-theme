@@ -1,8 +1,9 @@
 name: Create GitHub Release
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 permissions:
@@ -11,28 +12,29 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name }}
-
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
+      
       - name: Install vsce
         run: npm install -g @vscode/vsce
-
+      
       - name: Package Extension
         run: |
           vsce package
           echo "Generated .vsix file:"
           ls -la *.vsix
-
+      
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: ./*.vsix
+          generate_release_notes: true
           token: ${{ secrets.GITHUB_TOKEN }}
