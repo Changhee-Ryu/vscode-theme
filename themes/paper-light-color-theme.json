@@ -362,8 +362,7 @@
         {
             "name": "Python Magic Methods & Special",
             "scope": [
-                "support.function.magic.python",
-                "meta.function-call.arguments.python"
+                "support.function.magic.python"
             ],
             "settings": {
                 "foreground": "#946506",

@@ -1,0 +1,33 @@
+# Build artifacts
+*.vsix
+*.zip
+dist/
+
+# Development files
+.vscode/**
+.vscode-test/**
+.DS_Store
+
+# Documentation (optional - keep if you want it in package)
+# README.md
+# CHANGELOG.md
+# LICENSE.md
+
+# Git files
+.git/**
+.gitignore
+
+# Node modules
+node_modules/**
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+*.log
+npm-debug.log*
+
+# Configuration files
+tsconfig.json
+webpack.config.js
+esbuild.js

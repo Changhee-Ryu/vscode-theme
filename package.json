@@ -2,7 +2,7 @@
   "name": "eye-friendly-paper",
   "displayName": "Eye-Friendly Paper Themes",
   "description": "A collection of comfortable, paper-inspired themes for optimal eye comfort and readability.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "icon.png",
   "publisher": "Changhee-Ryu",
   "repository": {
@@ -15,6 +15,11 @@
   "categories": [
     "Themes"
   ],
+  "scripts": {
+    "package": "vsce package",
+    "postpackage": "mkdir -p dist && mv *.vsix dist/",
+    "package:install": "code --install-extension dist/*.vsix"
+  },
   "contributes": {
     "themes": [
       {
